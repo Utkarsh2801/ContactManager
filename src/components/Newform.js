@@ -26,7 +26,7 @@ class Newform extends Component {
       <React.Fragment>
         <Navigation />
         <div className="add_form">
-          <form onSubmit={this.onSubmit.bind(this)}>
+          <form onSubmit={this.onSubmit.bind(this)} autoComplete="off">
             <FormInput
               placeholder={"Name"}
               type={"text"}

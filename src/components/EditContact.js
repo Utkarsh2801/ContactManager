@@ -45,7 +45,7 @@ class EditContact extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="add_form">
+      <div className="add_form" autoComplete="off">
         <form onSubmit={this.onSubmit.bind(this)}>
           <FormInput
             placeholder={"Name"}
