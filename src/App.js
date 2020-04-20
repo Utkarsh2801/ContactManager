@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./style.css";
+
+import Newform from "./components/Newform";
+import ContactList from "./components/ContactList";
+import EditContact from "./components/EditContact";
+import Nomatch from "./components/Nomatch";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Switch>
+        <Route path="/add" component={Newform} />
+        <Route exact path="/" component={ContactList} />
+        <Route exact path="/edit/:id" component={EditContact} />
+        <Route exact component={Nomatch} />
+      </Switch>
     </div>
   );
 }
